@@ -104,5 +104,10 @@ namespace Box2DX.Common
 		}
 
 		public float X, Y, Z;
-	}
+
+        public override string ToString()
+        {
+            return "{" + X + ", " + Y + ", " + Z + "}";
+        }
+    }
 }

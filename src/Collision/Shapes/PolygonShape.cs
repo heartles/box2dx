@@ -263,7 +263,7 @@ namespace Box2DX.Collision
 			aabb.UpperBound = upper + r;
 		}
 
-		public override void ComputeMass(out MassData massData, float denstity)
+		public override void ComputeMass(out MassData massData, float density)
 		{
 			// Polygon mass, centroid, and inertia.
 			// Let rho be the polygon density in mass per unit area.
@@ -339,7 +339,7 @@ namespace Box2DX.Collision
 			}
 
 			// Total mass
-			massData.Mass = denstity * area;
+			massData.Mass = density * area;
 
 			// Center of mass
 			Box2DXDebug.Assert(area > Common.Settings.FLT_EPSILON);
@@ -347,7 +347,7 @@ namespace Box2DX.Collision
 			massData.Center = center;
 
 			// Inertia tensor relative to the local origin.
-			massData.I = denstity * I;
+			massData.I = density * I;
 		}
 
 		public override float ComputeSubmergedArea(Vec2 normal, float offset, XForm xf, out Vec2 c)

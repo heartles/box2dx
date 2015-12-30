@@ -31,31 +31,31 @@ namespace Box2DX.Dynamics
 	/// body is destroyed. Implement this listener so that you
 	/// may nullify references to these joints and shapes.
 	/// </summary>
-	public abstract class DestructionListener
+	public interface IDestructionListener
 	{
 		/// <summary>
 		/// Called when any joint is about to be destroyed due
 		/// to the destruction of one of its attached bodies.
 		/// </summary>
-		public abstract void SayGoodbye(Joint joint);
+		void SayGoodbye(Joint joint);
 
 		/// <summary>
 		/// Called when any shape is about to be destroyed due
 		/// to the destruction of its parent body.
 		/// </summary>
-		public abstract void SayGoodbye(Fixture fixture);
+		void SayGoodbye(Fixture fixture);
 	}
 
 	/// <summary>
 	/// This is called when a body's shape passes outside of the world boundary.
 	/// </summary>
-	public abstract class BoundaryListener
+	public interface IBoundaryListener
 	{
 		/// <summary>
 		/// This is called for each body that leaves the world boundary.
 		/// @warning you can't modify the world inside this callback.
 		/// </summary>
-		public abstract void Violation(Body body);
+		void Violation(Body body);
 	}
 
 	/// <summary>

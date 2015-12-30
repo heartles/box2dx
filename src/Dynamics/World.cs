@@ -74,8 +74,8 @@ namespace Box2DX.Dynamics
 
 		private Body _groundBody;
 
-		private DestructionListener _destructionListener;
-		private BoundaryListener _boundaryListener;
+		private IDestructionListener _destructionListener;
+		private IBoundaryListener _boundaryListener;
 		internal ContactFilter _contactFilter;
 		internal ContactListener _contactListener;
 		private DebugDraw _debugDraw;
@@ -145,7 +145,7 @@ namespace Box2DX.Dynamics
 		/// Register a destruction listener.
 		/// </summary>
 		/// <param name="listener"></param>
-		public void SetDestructionListener(DestructionListener listener)
+		public void SetDestructionListener(IDestructionListener listener)
 		{
 			_destructionListener = listener;
 		}
@@ -154,7 +154,7 @@ namespace Box2DX.Dynamics
 		/// Register a broad-phase boundary listener.
 		/// </summary>
 		/// <param name="listener"></param>
-		public void SetBoundaryListener(BoundaryListener listener)
+		public void SetBoundaryListener(IBoundaryListener listener)
 		{
 			_boundaryListener = listener;
 		}

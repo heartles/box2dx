@@ -226,5 +226,10 @@ namespace Box2DX.Common
 			Vec2 c = a - b;
 			return Vec2.Dot(c, c);
 		}
-	}
+
+        public override string ToString()
+        {
+            return "{" + X + ", " + Y + "}";
+        }
+    }
 }
